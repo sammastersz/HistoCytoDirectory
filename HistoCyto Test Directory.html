@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f766e">
+  <title>Histo &amp; Cyto Test Directory</title>
+
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --background: #f1f5f9;
+      --surface: #fff;
+      --text: #172033;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --shadow: 0 12px 30px rgb(15 23 42 / 8%);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 28px;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #ccfbf1 0, transparent 32rem),
+        var(--background);
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    .app { width: min(1500px, 100%); margin: 0 auto; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+      padding: 30px;
+      border-radius: 24px;
+      color: #fff;
+      background: linear-gradient(120deg, #0f766e, #14b8a6);
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -45px;
+      bottom: -115px;
+      width: 290px;
+      height: 290px;
+      border: 45px solid rgb(255 255 255 / 10%);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+    .eyebrow {
+      margin-bottom: 8px;
+      color: #ccfbf1;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.15;
+    }
+
+    .hero p { max-width: 700px; margin: 10px 0 0; color: #e6fffb; }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: minmax(220px, 1fr) minmax(190px, 240px) auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 16px;
+      padding: 16px;
+      border: 1px solid rgb(255 255 255 / 70%);
+      border-radius: var(--radius);
+      background: rgb(255 255 255 / 88%);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .search-wrap { position: relative; }
+
+    .search-icon {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      color: var(--muted);
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+
+    input[type="search"], select, input[type="password"] {
+      width: 100%;
+      min-height: 46px;
+      padding: 11px 13px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      outline: none;
+      color: var(--text);
+      background: #fff;
+      font: inherit;
+    }
+
+    input[type="search"] { padding-left: 42px; }
+
+    input:focus, select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgb(20 184 166 / 15%);
+    }
+
+    .actions { display: flex; gap: 9px; justify-content: flex-end; flex-wrap: wrap; }
+
+    .button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border: 0;
+      border-radius: 11px;
+      cursor: pointer;
+      font: inherit;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: transform .15s ease, background .15s ease;
+      white-space: nowrap;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+    .button-primary { color: #fff; background: var(--primary); }
+    .button-primary:hover { background: var(--primary-dark); }
+    .button-secondary { color: #334155; background: #e2e8f0; }
+    .button-secondary:hover { background: #cbd5e1; }
+
+    .file-picker { position: relative; display: inline-flex; overflow: hidden; }
+    .file-picker input {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 12px 2px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .table-card {
+      overflow: hidden;
+      border: 1px solid rgb(226 232 240 / 90%);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; min-width: 980px; border-collapse: collapse; text-align: left; }
+
+    th, td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    th {
+      color: #475569;
+      background: #f8fafc;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: #f8fffe; }
+    .organ-name { min-width: 180px; font-weight: 700; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: .8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .badge-histo { color: #1d4ed8; background: #dbeafe; }
+    .badge-cyto { color: #a16207; background: #fef3c7; }
+    .test-name { font-weight: 600; }
+    .price { color: #0f766e; font-weight: 800; white-space: nowrap; }
+    .schedule { min-width: 120px; }
+    .instruction { min-width: 220px; max-width: 360px; color: #475569; overflow-wrap: anywhere; }
+
+    .empty-state { padding: 44px 20px; color: var(--muted); text-align: center; }
+    .empty-state strong { display: block; margin-bottom: 5px; color: var(--text); font-size: 1.05rem; }
+    .hint { margin: 14px 4px 0; color: var(--muted); font-size: .82rem; }
+
+    .login-screen {
+      display: grid;
+      min-height: 100vh;
+      place-items: center;
+      padding: 20px;
+    }
+
+    .login-card {
+      width: min(420px, 100%);
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .login-card h1 { margin-bottom: 8px; font-size: 1.7rem; }
+    .login-card p { margin: 0 0 20px; color: var(--muted); }
+    .login-card label { display: block; margin-bottom: 7px; font-weight: 700; }
+    .login-card input { margin-bottom: 12px; }
+    .login-card .button { width: 100%; }
+    .login-error { min-height: 24px; color: #b91c1c; font-size: .9rem; }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 900px) {
+      body { padding: 18px; }
+      .toolbar { grid-template-columns: 1fr 1fr; }
+      .search-wrap { grid-column: 1 / -1; }
+      .actions { justify-content: flex-start; }
+    }
+
+    @media (max-width: 560px) {
+      body { padding: 12px; }
+      .hero { margin-bottom: 14px; padding: 23px 19px; border-radius: 18px; }
+      .hero p { font-size: .92rem; }
+      .toolbar { grid-template-columns: 1fr; gap: 10px; padding: 12px; border-radius: 15px; }
+      .search-wrap { grid-column: auto; }
+      .actions { display: grid; grid-template-columns: 1fr 1fr; }
+      .actions > * { width: 100%; }
+      .button { width: 100%; padding-inline: 9px; font-size: .82rem; }
+      .summary { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .table-card { border-radius: 15px; }
+      .table-scroll { overflow: visible; }
+      table { display: block; min-width: 0; }
+      thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        clip-path: inset(50%);
+      }
+      tbody { display: grid; gap: 12px; padding: 12px; }
+      tbody tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 14px;
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: #fff;
+      }
+      tbody tr:hover { background: #fff; }
+      td {
+        display: block;
+        min-width: 0 !important;
+        max-width: none;
+        padding: 0;
+        border: 0 !important;
+        overflow-wrap: anywhere;
+      }
+      td::before {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--muted);
+        content: attr(data-label);
+        font-size: .68rem;
+        font-weight: 800;
+        letter-spacing: .05em;
+        text-transform: uppercase;
+      }
+      td:first-child, td:last-child { grid-column: 1 / -1; }
+      .empty-state { padding: 34px 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <section id="loginScreen" class="login-screen">
+    <form id="loginForm" class="login-card">
+      <h1>Directory Login</h1>
+      <p>Enter your account password to view the test directory.</p>
+
+      <label for="loginPassword">Password</label>
+      <input
+        id="loginPassword"
+        type="password"
+        autocomplete="current-password"
+        required
+        autofocus
+      >
+
+      <div id="loginError" class="login-error" aria-live="polite"></div>
+      <button class="button button-primary" type="submit">Sign in</button>
+    </form>
+  </section>
+
+  <main id="appScreen" class="app" hidden>
+    <header class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Dr. Jariwala Laboratory</div>
+        <h1>Histo &amp; Cyto Test Directory</h1>
+        <p>Find specimen mappings, estimated charges, report schedules, and test-specific instructions.</p>
+      </div>
+    </header>
+
+    <section class="toolbar" aria-label="Search and directory actions">
+      <div class="search-wrap">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Search specimen, test, schedule, or instruction..."
+          aria-label="Search directory"
+        >
+      </div>
+
+      <select id="typeFilter" aria-label="Filter by department">
+        <option value="ALL">All departments</option>
+        <option value="Histopathology">Histopathology</option>
+        <option value="Cytology">Cytology</option>
+      </select>
+
+      <div id="adminActions" class="actions" hidden>
+        <label class="file-picker">
+          <span class="button button-secondary">📥 Import CSV</span>
+          <input id="csvFileInput" type="file" accept=".csv,text/csv" aria-label="Import CSV file">
+        </label>
+
+        <button class="button button-primary" id="exportButton" type="button">📤 Export CSV</button>
+
+        <label class="file-picker">
+          <span class="button button-secondary">📥 Import JSON</span>
+          <input id="jsonFileInput" type="file" accept=".json,application/json" aria-label="Import JSON file">
+        </label>
+
+        <button class="button button-primary" id="exportJsonButton" type="button">📤 Export JSON</button>
+      </div>
+    </section>
+
+    <div class="summary">
+      <span id="resultCount" aria-live="polite"></span>
+      <span>
+        <span id="roleLabel"></span>
+        <button id="logoutButton" class="button button-secondary" type="button">Log out</button>
+      </span>
+    </div>
+
+    <section class="table-card" aria-label="Test directory">
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Organ / Specimen</th>
+              <th>Department</th>
+              <th>Recommended Test</th>
+              <th>Estimated Charges</th>
+              <th>Report Schedule</th>
+              <th>Instruction</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+
+        <div id="emptyState" class="empty-state" hidden>
+          <strong>No matching records</strong>
+          Try a different search term or department filter.
+        </div>
+      </div>
+    </section>
+
+    <p class="hint">
+      CSV columns: Organ/Specimen, Department Type, Recommended Test, Estimated Cost,
+      Report Schedule, Instruction.
+    </p>
+  </main>
+
+  <script>
+    const STORAGE_KEY = "histoCytoTestDirectory";
+
+    // Demo credentials only. Client-side passwords are visible in the page source.
+    const ADMIN_PASSWORD = "palak123";
+    const USER_PASSWORD = "user";
+
+    const defaultDatabase = [
+      { organ: "Skin Punch Biopsy", type: "Histopathology", test: "Histo Very Small", cost: 1200, schedule: "", instruction: "" },
+      { organ: "Appendix", type: "Histopathology", test: "Histo Small", cost: 1800, schedule: "", instruction: "" },
+      { organ: "Gallbladder", type: "Histopathology", test: "Histo Small", cost: 1800, schedule: "", instruction: "" },
+      { organ: "Colon Resection", type: "Histopathology", test: "Histo Large", cost: 4500, schedule: "", instruction: "" },
+      { organ: "Radical Mastectomy (Breast)", type: "Histopathology", test: "Histo Very Large", cost: 6000, schedule: "", instruction: "" },
+      { organ: "Thyroid Needle Aspiration (FNAC)", type: "Cytology", test: "Cyto Standard", cost: 1500, schedule: "", instruction: "" },
+      { organ: "Cervical Smear (Pap Smear)", type: "Cytology", test: "Cyto Screening", cost: 900, schedule: "", instruction: "" },
+      { organ: "Pleural Fluid", type: "Cytology", test: "Fluid Cytology", cost: 2000, schedule: "", instruction: "" },
+      { organ: "Ascitic Fluid", type: "Cytology", test: "Fluid Cytology", cost: 2000, schedule: "", instruction: "" },
+      { organ: "Endometrial Biopsy", type: "Histopathology", test: "Histo Medium", cost: 2800, schedule: "", instruction: "" }
+    ];
+
+    function loadDatabase() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (!saved) return [...defaultDatabase];
+        const parsed = JSON.parse(saved);
+        return Array.isArray(parsed) ? parsed : [...defaultDatabase];
+      } catch {
+        return [...defaultDatabase];
+      }
+    }
+
+    let database = loadDatabase();
+
+    const loginScreen = document.getElementById("loginScreen");
+    const appScreen = document.getElementById("appScreen");
+    const loginForm = document.getElementById("loginForm");
+    const loginPassword = document.getElementById("loginPassword");
+    const loginError = document.getElementById("loginError");
+    const adminActions = document.getElementById("adminActions");
+    const roleLabel = document.getElementById("roleLabel");
+
+    const tableBody = document.getElementById("tableBody");
+    const emptyState = document.getElementById("emptyState");
+    const resultCount = document.getElementById("resultCount");
+    const searchInput = document.getElementById("searchInput");
+    const typeFilter = document.getElementById("typeFilter");
+    const csvFileInput = document.getElementById("csvFileInput");
+    const jsonFileInput = document.getElementById("jsonFileInput");
+
+    function showApp(role) {
+      loginScreen.hidden = true;
+      appScreen.hidden = false;
+
+      const isAdmin = role === "admin";
+      adminActions.hidden = !isAdmin;
+      roleLabel.textContent = isAdmin ? "Admin account" : "Normal user";
+      filterData();
+    }
+
+    loginForm.addEventListener("submit", event => {
+      event.preventDefault();
+      const password = loginPassword.value;
+
+      if (password === ADMIN_PASSWORD) {
+        loginError.textContent = "";
+        showApp("admin");
+      } else if (password === USER_PASSWORD) {
+        loginError.textContent = "";
+        showApp("user");
+      } else {
+        loginError.textContent = "Incorrect password. Please try again.";
+        loginPassword.select();
+      }
+    });
+
+    document.getElementById("logoutButton").addEventListener("click", () => {
+      appScreen.hidden = true;
+      loginScreen.hidden = false;
+      loginPassword.value = "";
+      loginPassword.focus();
+    });
+
+    function saveDatabase() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(database));
+        return true;
+      } catch (error) {
+        console.error("Could not save directory:", error);
+        alert("Data could not be saved in this browser. Check browser storage settings.");
+        return false;
+      }
+    }
+
+    function addCell(row, label, className, value) {
+      const cell = document.createElement("td");
+      cell.dataset.label = label;
+      if (className) cell.className = className;
+      cell.textContent = value;
+      row.appendChild(cell);
+      return cell;
+    }
+
+    function renderTable(rows) {
+      tableBody.replaceChildren();
+      emptyState.hidden = rows.length !== 0;
+      resultCount.textContent = `${rows.length} ${rows.length === 1 ? "record" : "records"} shown`;
+
+      for (const item of rows) {
+        const row = document.createElement("tr");
+
+        addCell(row, "Organ / Specimen", "organ-name", item.organ);
+
+        const departmentCell = document.createElement("td");
+        departmentCell.dataset.label = "Department";
+        const badge = document.createElement("span");
+        badge.className = "badge " + (item.type === "Histopathology" ? "badge-histo" : "badge-cyto");
+        badge.textContent = item.type;
+        departmentCell.appendChild(badge);
+        row.appendChild(departmentCell);
+
+        addCell(row, "Recommended Test", "test-name", item.test);
+
+        addCell(
+          row,
+          "Estimated Charges",
+          "price",
+          `₹${Number(item.cost).toLocaleString("en-IN", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+          })}`
+        );
+
+        addCell(row, "Report Schedule", "schedule", item.schedule || "—");
+        addCell(row, "Instruction", "instruction", item.instruction || "—");
+        tableBody.appendChild(row);
+      }
+    }
+
+    function filterData() {
+      const query = searchInput.value.trim().toLowerCase();
+      const selectedType = typeFilter.value;
+
+      const filtered = database.filter(item => {
+        const searchable = [
+          item.organ, item.type, item.test, item.schedule, item.instruction
+        ].join(" ").toLowerCase();
+
+        return searchable.includes(query) &&
+          (selectedType === "ALL" || selectedType === item.type);
+      });
+
+      renderTable(filtered);
+    }
+
+    function escapeCSV(value) {
+      return `"${String(value ?? "").replace(/"/g, '""')}"`;
+    }
+
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function exportCSV() {
+      const headers = [
+        "Organ/Specimen",
+        "Department Type",
+        "Recommended Test",
+        "Estimated Cost",
+        "Report Schedule",
+        "Instruction"
+      ];
+
+      const lines = [
+        headers.map(escapeCSV).join(","),
+        ...database.map(item =>
+          [
+            item.organ, item.type, item.test, item.cost,
+            item.schedule, item.instruction
+          ].map(escapeCSV).join(",")
+        )
+      ];
+
+      downloadBlob(
+        new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" }),
+        "histo_cyto_test_directory.csv"
+      );
+    }
+
+    function exportJSON() {
+      const blob = new Blob(
+        [JSON.stringify(database, null, 2)],
+        { type: "application/json;charset=utf-8" }
+      );
+      downloadBlob(blob, "histo_cyto_test_directory.json");
+    }
+
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const char = text[i];
+
+        if (char === '"' && inQuotes && text[i + 1] === '"') {
+          cell += '"';
+          i++;
+        } else if (char === '"') {
+          inQuotes = !inQuotes;
+        } else if (char === "," && !inQuotes) {
+          row.push(cell);
+          cell = "";
+        } else if ((char === "\n" || char === "\r") && !inQuotes) {
+          if (char === "\r" && text[i + 1] === "\n") i++;
+          row.push(cell);
+          if (row.some(value => value.trim())) rows.push(row);
+          row = [];
+          cell = "";
+        } else {
+          cell += char;
+        }
+      }
+
+      row.push(cell);
+      if (row.some(value => value.trim())) rows.push(row);
+      if (inQuotes) throw new Error("The CSV has an unclosed quoted field.");
+      return rows;
+    }
+
+    function normalizeHeader(value) {
+      return String(value || "")
+        .replace(/^\uFEFF/, "")
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]/g, "");
+    }
+
+    function validateAndNormalizeRecords(records) {
+      if (!Array.isArray(records) || records.length === 0) {
+        throw new Error("The file must contain a non-empty array of records.");
+      }
+
+      const imported = records.map(item => ({
+        organ: String(item.organ ?? item["Organ/Specimen"] ?? "").trim(),
+        type: String(item.type ?? item["Department Type"] ?? item.department ?? "").trim(),
+        test: String(item.test ?? item["Recommended Test"] ?? "").trim(),
+        cost: Number(String(item.cost ?? item["Estimated Cost"] ?? "").replace(/[₹,\s]/g, "")),
+        schedule: String(item.schedule ?? item["Report Schedule"] ?? "").trim(),
+        instruction: String(item.instruction ?? item["Instruction"] ?? "").trim()
+      }));
+
+      const invalid = imported.find(item =>
+        !item.organ ||
+        !["Histopathology", "Cytology"].includes(item.type) ||
+        !item.test ||
+        !Number.isFinite(item.cost)
+      );
+
+      if (invalid) {
+        throw new Error(
+          "Each record needs an organ, department (Histopathology or Cytology), test, and numeric cost."
+        );
+      }
+      return imported;
+    }
+
+    function confirmAdminImport() {
+      const password = prompt("Enter the admin password to import:");
+      if (password === null) return false;
+      if (password !== ADMIN_PASSWORD) {
+        alert("Incorrect password. No data was imported.");
+        return false;
+      }
+      return true;
+    }
+
+    function importCSV(input) {
+      const file = input.files?.[0];
+      if (!file) return;
+
+      if (!confirmAdminImport()) {
+        input.value = "";
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = event => {
+        try {
+          const csvRows = parseCSV(String(event.target.result || ""));
+          if (!csvRows.length) throw new Error("The selected CSV is empty.");
+
+          const headers = csvRows[0].map(normalizeHeader);
+          const organIndex = headers.findIndex(h =>
+            ["organspecimen", "organ", "specimen", "specimensource"].includes(h)
+          );
+
+          let records;
+
+          if (organIndex !== -1) {
+            const find = names => headers.findIndex(h => names.includes(h));
+            const typeIndex = find(["departmenttype", "department", "type"]);
+            const testIndex = find(["recommendedtest", "test", "recommendedtier", "tier", "mappingtier"]);
+            const costIndex = find(["estimatedcost", "standardchargesestimated", "standardcharges", "cost", "charges"]);
+            const scheduleIndex = find(["reportschedule", "schedule"]);
+            const instructionIndex = find(["instruction", "instructions", "testinstruction"]);
+
+            if ([organIndex, typeIndex, testIndex, costIndex].includes(-1)) {
+              throw new Error("Required columns are missing: Organ/Specimen, Department Type, Recommended Test, and Estimated Cost.");
+            }
+
+            records = csvRows.slice(1).map(row => ({
+              organ: row[organIndex] || "",
+              type: row[typeIndex] || "",
+              test: row[testIndex] || "",
+              cost: (row[costIndex] || "").replace(/[₹,\s]/g, ""),
+              schedule: scheduleIndex < 0 ? "" : row[scheduleIndex] || "",
+              instruction: instructionIndex < 0 ? "" : row[instructionIndex] || ""
+            }));
+          } else {
+            records = csvRows.map(row => ({
+              organ: row[0] || "",
+              type: row[1] || "",
+              test: row[2] || "",
+              cost: (row[3] || "").replace(/[₹,\s]/g, ""),
+              schedule: row[4] || "",
+              instruction: row[5] || ""
+            }));
+          }
+
+          records = records.filter(item =>
+            item.organ || item.type || item.test || item.schedule || item.instruction
+          );
+
+          database = validateAndNormalizeRecords(records);
+          saveDatabase();
+          filterData();
+          alert(`Imported and saved ${database.length} records in this browser.`);
+        } catch (error) {
+          alert(`CSV import failed: ${error.message}`);
+        } finally {
+          input.value = "";
+        }
+      };
+
+      reader.onerror = () => {
+        alert("Could not read the selected file.");
+        input.value = "";
+      };
+
+      reader.readAsText(file);
+    }
+
+    function importJSON(input) {
+      const file = input.files?.[0];
+      if (!file) return;
+
+      if (!confirmAdminImport()) {
+        input.value = "";
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = event => {
+        try {
+          const parsed = JSON.parse(String(event.target.result || ""));
+          const records = Array.isArray(parsed) ? parsed : parsed.records;
+          database = validateAndNormalizeRecords(records);
+          saveDatabase();
+          filterData();
+          alert(`Imported and saved ${database.length} records in this browser.`);
+        } catch (error) {
+          alert(`JSON import failed: ${error.message}`);
+        } finally {
+          input.value = "";
+        }
+      };
+
+      reader.onerror = () => {
+        alert("Could not read the selected file.");
+        input.value = "";
+      };
+
+      reader.readAsText(file);
+    }
+
+    searchInput.addEventListener("input", filterData);
+    typeFilter.addEventListener("change", filterData);
+    document.getElementById("exportButton").addEventListener("click", exportCSV);
+    document.getElementById("exportJsonButton").addEventListener("click", exportJSON);
+    csvFileInput.addEventListener("change", () => importCSV(csvFileInput));
+    jsonFileInput.addEventListener("change", () => importJSON(jsonFileInput));
+  </script>
+</body>
+</html>
