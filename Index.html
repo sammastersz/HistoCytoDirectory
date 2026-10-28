@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<!-- saved from url=(0068)file:///C:/Users/Moderator/Desktop/HistoCyto%20Test%20Directory.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0f766e">
   <title>Histo &amp; Cyto Test Directory</title>
@@ -142,6 +142,8 @@
     .button-primary:hover { background: var(--primary-dark); }
     .button-secondary { color: #334155; background: #e2e8f0; }
     .button-secondary:hover { background: #cbd5e1; }
+    .button-warning { color: #7c2d12; background: #ffedd5; }
+    .button-warning:hover { background: #fed7aa; }
 
     .file-picker { position: relative; display: inline-flex; overflow: hidden; }
     .file-picker input {
@@ -310,26 +312,20 @@
 </head>
 
 <body>
-  <section id="loginScreen" class="login-screen">
+  <section id="loginScreen" class="login-screen" hidden="">
     <form id="loginForm" class="login-card">
       <h1>Directory Login</h1>
       <p>Enter your account password to view the test directory.</p>
 
       <label for="loginPassword">Password</label>
-      <input
-        id="loginPassword"
-        type="password"
-        autocomplete="current-password"
-        required
-        autofocus
-      >
+      <input id="loginPassword" type="password" autocomplete="current-password" required="" autofocus="">
 
       <div id="loginError" class="login-error" aria-live="polite"></div>
       <button class="button button-primary" type="submit">Sign in</button>
     </form>
   </section>
 
-  <main id="appScreen" class="app" hidden>
+  <main id="appScreen" class="app">
     <header class="hero">
       <div class="hero-content">
         <div class="eyebrow">Dr. Jariwala Laboratory</div>
@@ -341,12 +337,7 @@
     <section class="toolbar" aria-label="Search and directory actions">
       <div class="search-wrap">
         <span class="search-icon" aria-hidden="true">⌕</span>
-        <input
-          id="searchInput"
-          type="search"
-          placeholder="Search specimen, test, schedule, or instruction..."
-          aria-label="Search directory"
-        >
+        <input id="searchInput" type="search" placeholder="Search specimen, test, schedule, or instruction..." aria-label="Search directory">
       </div>
 
       <select id="typeFilter" aria-label="Filter by department">
@@ -355,7 +346,7 @@
         <option value="Cytology">Cytology</option>
       </select>
 
-      <div id="adminActions" class="actions" hidden>
+      <div id="adminActions" class="actions">
         <label class="file-picker">
           <span class="button button-secondary">📥 Import CSV</span>
           <input id="csvFileInput" type="file" accept=".csv,text/csv" aria-label="Import CSV file">
@@ -369,13 +360,17 @@
         </label>
 
         <button class="button button-primary" id="exportJsonButton" type="button">📤 Export JSON</button>
+
+        <button class="button button-warning" id="updateDefaultsButton" type="button">
+          ↻ Update Default Database
+        </button>
       </div>
     </section>
 
     <div class="summary">
-      <span id="resultCount" aria-live="polite"></span>
+      <span id="resultCount" aria-live="polite">10 records shown</span>
       <span>
-        <span id="roleLabel"></span>
+        <span id="roleLabel">Admin account</span>
         <button id="logoutButton" class="button button-secondary" type="button">Log out</button>
       </span>
     </div>
@@ -393,10 +388,10 @@
               <th>Instruction</th>
             </tr>
           </thead>
-          <tbody id="tableBody"></tbody>
+          <tbody id="tableBody"><tr><td data-label="Organ / Specimen" class="organ-name">Skin Punch Biopsy</td><td data-label="Department"><span class="badge badge-histo">Histopathology</span></td><td data-label="Recommended Test" class="test-name">Histo Very Small</td><td data-label="Estimated Charges" class="price">₹1,200.00</td><td data-label="Report Schedule" class="schedule">3 rd Day</td><td data-label="Instruction" class="instruction">Send Sample Urgently</td></tr><tr><td data-label="Organ / Specimen" class="organ-name">Appendix</td><td data-label="Department"><span class="badge badge-histo">Histopathology</span></td><td data-label="Recommended Test" class="test-name">Histo Small</td><td data-label="Estimated Charges" class="price">₹1,800.00</td><td data-label="Report Schedule" class="schedule">4 th Day</td><td data-label="Instruction" class="instruction">Fix Sample</td></tr><tr><td data-label="Organ / Specimen" class="organ-name">Gallbladder</td><td data-label="Department"><span class="badge badge-histo">Histopathology</span></td><td data-label="Recommended Test" class="test-name">Histo Small</td><td data-label="Estimated Charges" class="price">₹1,800.00</td><td data-label="Report Schedule" class="schedule">5 th Day</td><td data-label="Instruction" class="instruction">Please  call before taking entry</td></tr><tr><td data-label="Organ / Specimen" class="organ-name">Colon Resection</td><td data-label="Department"><span class="badge badge-histo">Histopathology</span></td><td data-label="Recommended Test" class="test-name">Histo Large</td><td data-label="Estimated Charges" class="price">₹4,500.00</td><td data-label="Report Schedule" class="schedule">6 th Day</td><td data-label="Instruction" class="instruction">—</td></tr><tr><td data-label="Organ / Specimen" class="organ-name">Radical Mastectomy (Breast)</td><td data-label="Department"><span class="badge badge-histo">Histopathology</span></td><td data-label="Recommended Test" class="test-name">Histo Very Large</td><td data-label="Estimated Charges" class="price">₹6,000.00</td><td data-label="Report Schedule" class="schedule">7 th Day</td><td data-label="Instruction" class="instruction">—</td></tr><tr><td data-label="Organ / Specimen" class="organ-name">Thyroid Needle Aspiration (FNAC)</td><td data-label="Department"><span class="badge badge-cyto">Cytology</span></td><td data-label="Recommended Test" class="test-name">Cyto Standard</td><td data-label="Estimated Charges" class="price">₹1,500.00</td><td data-label="Report Schedule" class="schedule">8 th Day</td><td data-label="Instruction" class="instruction">—</td></tr><tr><td data-label="Organ / Specimen" class="organ-name">Cervical Smear (Pap Smear)</td><td data-label="Department"><span class="badge badge-cyto">Cytology</span></td><td data-label="Recommended Test" class="test-name">Cyto Screening</td><td data-label="Estimated Charges" class="price">₹900.00</td><td data-label="Report Schedule" class="schedule">9 th Day</td><td data-label="Instruction" class="instruction">—</td></tr><tr><td data-label="Organ / Specimen" class="organ-name">Pleural Fluid</td><td data-label="Department"><span class="badge badge-cyto">Cytology</span></td><td data-label="Recommended Test" class="test-name">Fluid Cytology</td><td data-label="Estimated Charges" class="price">₹2,000.00</td><td data-label="Report Schedule" class="schedule">10 th Day</td><td data-label="Instruction" class="instruction">—</td></tr><tr><td data-label="Organ / Specimen" class="organ-name">Ascitic Fluid</td><td data-label="Department"><span class="badge badge-cyto">Cytology</span></td><td data-label="Recommended Test" class="test-name">Fluid Cytology</td><td data-label="Estimated Charges" class="price">₹2,000.00</td><td data-label="Report Schedule" class="schedule">11 th Day</td><td data-label="Instruction" class="instruction">—</td></tr><tr><td data-label="Organ / Specimen" class="organ-name">Endometrial Biopsy</td><td data-label="Department"><span class="badge badge-histo">Histopathology</span></td><td data-label="Recommended Test" class="test-name">Histo Medium</td><td data-label="Estimated Charges" class="price">₹2,800.00</td><td data-label="Report Schedule" class="schedule">12 th Day</td><td data-label="Instruction" class="instruction">—</td></tr></tbody>
         </table>
 
-        <div id="emptyState" class="empty-state" hidden>
+        <div id="emptyState" class="empty-state" hidden="">
           <strong>No matching records</strong>
           Try a different search term or department filter.
         </div>
@@ -693,6 +688,28 @@
       return true;
     }
 
+    function updateDefaultDatabase() {
+      const password = prompt("Enter the admin password to update the default database:");
+      if (password === null) return;
+
+      if (password !== ADMIN_PASSWORD) {
+        alert("Incorrect password. The database was not changed.");
+        return;
+      }
+
+      const confirmed = confirm(
+        "This will replace the current directory with the built-in default records. Continue?"
+      );
+      if (!confirmed) return;
+
+      database = defaultDatabase.map(item => ({ ...item }));
+
+      if (saveDatabase()) {
+        filterData();
+        alert(`Default database restored with ${database.length} records.`);
+      }
+    }
+
     function importCSV(input) {
       const file = input.files?.[0];
       if (!file) return;
@@ -806,8 +823,9 @@
     typeFilter.addEventListener("change", filterData);
     document.getElementById("exportButton").addEventListener("click", exportCSV);
     document.getElementById("exportJsonButton").addEventListener("click", exportJSON);
+    document.getElementById("updateDefaultsButton").addEventListener("click", updateDefaultDatabase);
     csvFileInput.addEventListener("change", () => importCSV(csvFileInput));
     jsonFileInput.addEventListener("change", () => importJSON(jsonFileInput));
   </script>
-</body>
-</html>
+
+</body></html>
