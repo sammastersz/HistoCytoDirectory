@@ -1,0 +1,11 @@
+Organ/Specimen,Department Type,Recommended Test,Estimated Cost,Report Schedule,Instruction
+Skin Punch Biopsy,Histopathology,Histo Very Small,1200,3 rd Day,Send Sample Urgently
+Appendix,Histopathology,Histo Small,1800,4 th Day,Fix Sample
+Gallbladder,Histopathology,Histo Small,1800,5 th Day,Please  call before taking entry
+Colon Resection,Histopathology,Histo Large,4500,6 th Day,
+Radical Mastectomy (Breast),Histopathology,Histo Very Large,6000,7 th Day,
+Thyroid Needle Aspiration (FNAC),Cytology,Cyto Standard,1500,8 th Day,
+Cervical Smear (Pap Smear),Cytology,Cyto Screening,900,9 th Day,
+Pleural Fluid,Cytology,Fluid Cytology,2000,10 th Day,
+Ascitic Fluid,Cytology,Fluid Cytology,2000,11 th Day,
+Endometrial Biopsy,Histopathology,Histo Medium,2800,12 th Day,
