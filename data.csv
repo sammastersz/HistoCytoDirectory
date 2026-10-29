@@ -1,11 +1,55 @@
 Organ/Specimen,Department Type,Recommended Test,Estimated Cost,Report Schedule,Instruction
-Skin Punch Biopsy,Histopathology,Histo Very Small,1200,3 rd Day,Send Sample Urgently
-Appendix,Histopathology,Histo Small,1800,4 th Day,Fix Sample
-Gallbladder,Histopathology,Histo Small,1800,5 th Day,Please  call before taking entry
-Colon Resection,Histopathology,Histo Large,4500,6 th Day,
-Radical Mastectomy (Breast),Histopathology,Histo Very Large,6000,7 th Day,
-Thyroid Needle Aspiration (FNAC),Cytology,Cyto Standard,1500,8 th Day,
-Cervical Smear (Pap Smear),Cytology,Cyto Screening,900,9 th Day,
-Pleural Fluid,Cytology,Fluid Cytology,2000,10 th Day,
-Ascitic Fluid,Cytology,Fluid Cytology,2000,11 th Day,
-Endometrial Biopsy,Histopathology,Histo Medium,2800,12 th Day,
+Appendix / Appendicectomy,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Send Sample Urgently
+Gall Bladder / Cholecystectomy / Cholelithiasis / Cholecystitis,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Fix Sample
+Polyp / Nasal Polyps / Paranasal Sinus / Nasal Tissue,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Please  call before taking entry
+Endometrium / Cervix Biopsy / Vaginal Lesion / Dilation & Curettage (D&C),Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Send Sample Urgently
+Fistula / Fissures / Sinus / Abscess,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Fix Sample
+Haemorrhoids / Pilonidal Sinus / Piles,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Please  call before taking entry
+Lipoma (Small) / Tissue from Ear / Polyp / Cholesteatoma,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Send Sample Urgently
+Fallopian Tube (One or two containers),Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Fix Sample
+Disc Material / L4-L5 Disc / Discectomy,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Please  call before taking entry
+Keratinous / Sebaceous Cyst / Vocal Cord Cyst / Nodule,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Send Sample Urgently
+Tissue from Bursa / Synovium / Finger / Toes,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Fix Sample
+Ectopic Tubal Pregnancy,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Please  call before taking entry
+Gingiva Tissue (From dentist),Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Send Sample Urgently
+Preputial Skin / Circumcision,Histopathology,HISTO SMALL,1000,Report after 5 Working Days,Fix Sample
+Colonic Biopsy Polyp / Ulcer,Histopathology,HISTO SMALL BIOPSY,1500,Report after 5 Working Days,Please  call before taking entry
+Any Gastrointestinal (GI) Biopsy / Duodenal Biopsy,Histopathology,HISTO SMALL BIOPSY,1500,Report after 5 Working Days,Send Sample Urgently
+"Antral, Fundus, Pylorus Biopsy",Histopathology,HISTO SMALL BIOPSY,1500,Report after 5 Working Days,Fix Sample
+"Gastric, Ileal, Sigmoid Colon, Rectum, CT Guided Biopsy",Histopathology,HISTO SMALL BIOPSY,1500,Report after 5 Working Days,Please  call before taking entry
+Oesophageal Biopsy,Histopathology,HISTO SMALL BIOPSY,1500,Report after 5 Working Days,Send Sample Urgently
+Tongue / Lip Biopsy,Histopathology,HISTO SMALL BIOPSY,1500,Report after 5 Working Days,Fix Sample
+Buccal Mucosa Biopsy,Histopathology,HISTO SMALL BIOPSY,1500,Report after 5 Working Days,Please  call before taking entry
+Gastroesophageal Junction,Histopathology,HISTO SMALL BIOPSY,1500,Report after 5 Working Days,Send Sample Urgently
+Prostate Biopsy,Histopathology,HISTO SMALL BIOPSY,1500,Report after 5 Working Days,Fix Sample
+Oral Biopsy,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Please  call before taking entry
+Bilateral Tonsils,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Send Sample Urgently
+Lymphnodes,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Fix Sample
+Bartholin Cyst,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Please  call before taking entry
+Intraabdominal / Intrathoracic,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Send Sample Urgently
+Bilateral Orchidectomy / Hydrocele Sac / Hernial Sac / Bilateral Testis,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Fix Sample
+Bilateral Tonsillectomy,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Please  call before taking entry
+Soft Tissue Masses,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Send Sample Urgently
+Uterus with Cervix / Myomectomy,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Fix Sample
+TURP Chips / Prostatic,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Please  call before taking entry
+Salivary Gland Tumor,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Send Sample Urgently
+Fibroadenoma - Breast / Myomectomy,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Fix Sample
+Fibrocystic Breast,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Please  call before taking entry
+GI - Biopsy,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Send Sample Urgently
+Hemithyroidectomy,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Fix Sample
+Urinary Bladder Lesion,Histopathology,HISTO MEDIUM,1400,Report after 5 Working Days,Please  call before taking entry
+Total Thyroidectomy,Histopathology,HISTO LARGE,2000,Report after 5 Working Days,Send Sample Urgently
+Uterus with Bilateral Salpingectomy / Oophorectomy,Histopathology,HISTO LARGE,2000,Report after 5 Working Days,Fix Sample
+Large Ovarian Cyst,Histopathology,HISTO LARGE,2000,Report after 5 Working Days,Please  call before taking entry
+Large Soft Tissue Mass,Histopathology,HISTO LARGE,2000,Report after 5 Working Days,Send Sample Urgently
+Intestine Gangrene,Histopathology,HISTO LARGE,2000,Report after 5 Working Days,Fix Sample
+Kidney Non Functional,Histopathology,HISTO LARGE,2000,Report after 5 Working Days,Please  call before taking entry
+Mandible / MRND (Modified Radical Neck Dissection),Histopathology,HISTO VERY LARGE,3000,Report after 5 Working Days,Send Sample Urgently
+Colectomy Ca-Colon,Histopathology,HISTO VERY LARGE,3000,Report after 5 Working Days,Fix Sample
+MRM - Ca Breast (Modified Radical Mastectomy),Histopathology,HISTO VERY LARGE,3000,Report after 5 Working Days,Please  call before taking entry
+Nephrectomy Kidney,Histopathology,HISTO VERY LARGE,3000,Report after 5 Working Days,Send Sample Urgently
+Any Cancer Specimen,Histopathology,HISTO VERY LARGE,3000,Report after 5 Working Days,Fix Sample
+Small Intestine - Ca Resection,Histopathology,HISTO VERY LARGE,3000,Report after 5 Working Days,Please  call before taking entry
+Cytology,Cytology,CYTOLOGY,800,Report after 3 Working Days,Please  call before taking entry
+Cytology Second Opinion,Cytology,CYTOLOGY,800,Report after 3 Working Days,Please  call before taking entry
+Fine Needle Aspiration Cytology - FNAC,Cytology,CYTOLOGY,1200,Report after 3 Working Days,Please  call before taking entry
