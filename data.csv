@@ -1,34 +1,34 @@
 Organ/Specimen,Department Type,Recommended Test,Estimated Cost,Report Schedule,Instruction
-Appendix / Appendicectomy,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,"Clinical details, Sonography report"
-Gall Bladder / Cholecystectomy / Cholelithiasis / Cholecystitis,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,"Clinical details, Sonography report"
+Appendix / Appendicectomy,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details/ Sonography report
+Gall Bladder / Cholecystectomy / Cholelithiasis / Cholecystitis,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details/ Sonography report
 Polyp / Nasal Polyps / Paranasal Sinus / Nasal Tissue,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details
-Endometrium / Cervix Biopsy / Vaginal Lesion / Dilation & Curettage (D&C),Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,"Clinical details, Sonography report"
-Fistula / Fissures / Sinus / Abscess,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,"Clinical details, C T scan report"
+Endometrium / Cervix Biopsy / Vaginal Lesion / Dilation & Curettage (D&C),Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details/ Sonography report
+Fistula / Fissures / Sinus / Abscess,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details/ C T scan report
 Haemorrhoids / Pilonidal Sinus / Piles,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details
-Lipoma (Small) / Tissue from Ear / Polyp / Cholesteatoma,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,"Clinical details, Sonography report"
+Lipoma (Small) / Tissue from Ear / Polyp / Cholesteatoma,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details/ Sonography report
 Fallopian Tube (One or two containers),Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details
-Disc Material / L4-L5 Disc / Discectomy,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,"Clinical details, CT scan report"
+Disc Material / L4-L5 Disc / Discectomy,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details/ CT scan report
 Keratinous / Sebaceous Cyst / Vocal Cord Cyst / Nodule,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details 
 Tissue from Bursa / Synovium / Finger / Toes,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details 
-Ectopic Tubal Pregnancy,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,"Sonography report, Beta HCG report"
+Ectopic Tubal Pregnancy,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Sonography report/ Beta HCG report
 Gingiva Tissue (From dentist),Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details
 Preputial Skin / Circumcision,Histopathology,HISTO SMALL,Refer Software,Report after 5 Working Days,Clinical details
-"Colonic Biopsy Polyp / Ulcer, Sigmoid Colon, Rectum,",Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,Endoscopy report
-"Any Gastrointestinal (GI) Biopsy , Gastric / Duodenal / jejunum, ileal Biopsy",Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,Endoscopy report
-"Antral, Fundus, Pylorus Biopsy, Gastroesophageal Junction",Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,Endoscopy report
-CT Guided Biopsy/ USG guided Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,"CT scan report, USG report, MRI report PET scan report, if done"
+Colonic Biopsy Polyp / Ulcer/ Sigmoid Colon/ Rectum/,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,Endoscopy report
+Any Gastrointestinal (GI) Biopsy / Gastric / Duodenal / jejunum/ ileal Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,Endoscopy report
+Antral/ Fundus/ Pylorus Biopsy/ Gastroesophageal Junction,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,Endoscopy report
+CT Guided Biopsy/ USG guided Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,CT scan report/ USG report/ MRI report PET scan report/ if done
 Oesophageal Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,Endoscopy report
-Tongue / Lip Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,"Clinical details, History"
-Buccal Mucosa Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,"Clinical details, History"
-Prostate Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,"MRI report, USG report, Serum PSA levels"
+Tongue / Lip Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,Clinical details/ History
+Buccal Mucosa Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,Clinical details/ History
+Prostate Biopsy,Histopathology,HISTO SMALL BIOPSY,Refer Software,Report after 5 Working Days,MRI report/ USG report/ Serum PSA levels
 Bilateral Tonsils,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,Clinical details
-Lymphnodes,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,"Clinical details, USG report"
+Lymphnodes,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,Clinical details/ USG report
 Bartholin Cyst,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,Clinical details
 Bilateral Orchidectomy / Hydrocele Sac / Hernial Sac / Bilateral Testis,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,USG report/ CTscan report
 Bilateral Tonsillectomy,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,Clinical details
 Soft Tissue Masses,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,USG report/ CTscan report
 Uterus with Cervix / Myomectomy/ Uterine Fibroid,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,USG report/ CTscan report
-TURP Chips / Prostatic,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,"USG report/ CTscan report, Serum PSA levels"
+TURP Chips / Prostatic,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,USG report/ CTscan report/ Serum PSA levels
 Salivary Gland Tumor,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,USG report/ CTscan report
 Fibroadenoma - Breast / Myomectomy,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,USG  report
 Fibrocystic Breast,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,USG  report
@@ -36,7 +36,7 @@ Hemithyroidectomy,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Work
 Urinary Bladder Lesion,Histopathology,HISTO MEDIUM,Refer Software,Report after 5 Working Days,USG report/ CTscan report/ Cystoscopy report
 Total Thyroidectomy,Histopathology,HISTO LARGE,Refer Software,Report after 5 Working Days,Send Sample Urgently
 Uterus with Bilateral Salpingectomy / Oophorectomy,Histopathology,HISTO LARGE,Refer Software,Report after 5 Working Days,USG report/ CTscan report
-Large Ovarian Cyst,Histopathology,HISTO LARGE,Refer Software,Report after 5 Working Days,"USG report/ CTscan report, Tumour marker levels, CA 125"
+Large Ovarian Cyst,Histopathology,HISTO LARGE,Refer Software,Report after 5 Working Days,USG report/ CTscan report/ Tumour marker levels/ CA 125
 Large Soft Tissue Mass,Histopathology,HISTO LARGE,Refer Software,Report after 5 Working Days,USG report/ CTscan report
 Intestine Gangrene,Histopathology,HISTO LARGE,Refer Software,Report after 5 Working Days,USG report/ CTscan report
 Kidney Non Functional,Histopathology,HISTO LARGE,Refer Software,Report after 5 Working Days,USG report/ CTscan report
@@ -47,10 +47,10 @@ Nephrectomy Kidney,Histopathology,HISTO VERY LARGE,Refer Software,Report after 5
 Any Cancer Specimen,Histopathology,HISTO VERY LARGE,Refer Software,Report after 5 Working Days,USG report/ CTscan report/ PET scan report
 Small Intestine - Ca Resection,Histopathology,HISTO VERY LARGE,Refer Software,Report after 5 Working Days,USG report/ CTscan report/ PET scan report
 Cytology,Cytology,CYTOLOGY,Refer Software,Report after 3 Working Days,USG report
-Cytology Second Opinion,Cytology,CYTOLOGY,Ask doctor,Report after 3 Working Days,"Clinical Details, USG report, Previous cyto report."
-Cellblock,Cytology,CYTOLOGY,Refer Software,Report after 5 Working Days,"Clinical Details, USG/CT scan report, Previous cyto report."
+Cytology Second Opinion,Cytology,CYTOLOGY,Ask doctor,Report after 3 Working Days,Clinical Details/ USG report/ Previous cyto report.
+Cellblock,Cytology,CYTOLOGY,Refer Software,Report after 5 Working Days,Clinical Details/ USG/CT scan report/ Previous cyto report.
 Fine Needle Aspiration Cytology - FNAC,Cytology,CYTOLOGY,Refer Software,Report after 3 Working Days,USG report
-Histo second opinion.,Histopathology,Histopathology,Ask doctor,Report after 3 Working Days,"Clinical details, USG / CT scan report/ Previous histopath report. Call concerned Doctor while taking entry"
-"IHC (ER, PR, Her2Neu)",Histopathology,Histopathology,Refer Software,Report after 5 Working Days,Slides and Paraffin block. Previous Histopath report
-"IHC (ER, PR, Her2Neu, Ki 67)",Histopathology,Histopathology,Refer Software,Report after 5 Working Days,Slides and Paraffin block. Previous Histopath report
-Any other IHC ,Histopathology,Histopathology,Ask doctor,Report after 5-7 Working Days,"Clinical details, CT scan/ PET scan report/ Slides and paraffin blocks, Call concerned Histopathologist before telling charges. "
+Histo second opinion.,Histopathology,Histopathology,Ask doctor,Report after 3 Working Days,Clinical details/ USG / CT scan report/ Previous histopath report. Call concerned Doctor while taking entry
+IHC (ER/ PR/ Her2Neu),Histopathology,Histopathology,Refer Software,Report after 5 Working Days,Slides and Paraffin block. Previous Histopath report
+IHC (ER/ PR/ Her2Neu/ Ki 67),Histopathology,Histopathology,Refer Software,Report after 5 Working Days,Slides and Paraffin block. Previous Histopath report
+Any other IHC ,Histopathology,Histopathology,Ask doctor,Report after 5-7 Working Days,Clinical details/ CT scan/ PET scan report/ Slides and paraffin blocks/ Call concerned Histopathologist before telling charges. 
